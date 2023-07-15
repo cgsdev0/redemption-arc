@@ -15,11 +15,13 @@ TWITCH_RESPONSE=$(curl -Ss -X POST \
   -d "client_id=${TWITCH_CLIENT_ID}&client_secret=${TWITCH_CLIENT_SECRET}&code=${AUTHORIZATION_CODE}&grant_type=authorization_code&redirect_uri=${PROTOCOL}${HOST}/oauth")
 
 ACCESS_TOKEN=$(echo "$TWITCH_RESPONSE" | jq -r '.access_token')
+RESPONSE="<pre>${TWITCH_RESPONSE}</pre>"
 
-if [[ "$ACCESS_TOKEN" == "null" ]]; then
+if [[ -z "$ACCESS_TOKEN" ]] || [[ "$ACCESS_TOKEN" == "null" ]]; then
   htmx_page << EOF
   <div class="container">
     <h1>Error</h1>
+    ${RESPONSE}
     <p>Something went wrong registering for Redemption ARC. :(</p>
     <p><a href="/">Back to Home</a></p>
   </div>
