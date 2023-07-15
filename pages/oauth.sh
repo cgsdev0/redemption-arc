@@ -32,11 +32,13 @@ TWITCH_RESPONSE=$(curl -Ss -X GET 'https://id.twitch.tv/oauth2/validate' \
   -H "Authorization: OAuth ${ACCESS_TOKEN}")
 
 USER_ID=$(echo "$TWITCH_RESPONSE" | jq -r '.user_id')
+RESPONSE="<pre>${TWITCH_RESPONSE}</pre>"
 
-if [[ "$USER_ID" == "null" ]]; then
+if [[ -z "$USER_ID" ]] || [[ "$USER_ID" == "null" ]]; then
   htmx_page << EOF
   <div class="container">
     <h1>Error</h1>
+    ${RESPONSE}
     <p>Something went wrong registering for Redemption ARC. :(</p>
     <p><a href="/">Back to Home</a></p>
   </div>
