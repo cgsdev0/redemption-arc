@@ -101,3 +101,36 @@ body {
   height: 40vh;
   resize: none;
 }
+
+.twitch {
+  background-color: rgb(145, 70, 255);
+  color: white;
+  text-decoration: none;
+  padding: 16px;
+  margin: 16px;
+  border-radius: 20px;
+  border: solid 3px black;
+}
+
+.twitch:hover {
+  background-color: rgb(165, 90, 255);
+}
+
+.twitch:active {
+  background-color: rgb(115, 60, 225);
+}
+
+.desc strong {
+  text-decoration: underline;
+}
+
+.desc {
+  position: relative;
+  top: -20px;
+}
+
+.credit em {
+  position: relative;
+  top: -40px;
+  font-size: 12pt;
+}

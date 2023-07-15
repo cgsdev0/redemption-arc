@@ -41,6 +41,7 @@ function htmx_page() {
   <!doctype html>
   <html>
   <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${STYLE_TEXT}
   <script src="https://unpkg.com/moment@2.29.4/min/moment.min.js"></script>
   <script>
