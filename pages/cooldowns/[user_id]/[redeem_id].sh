@@ -11,6 +11,8 @@ COLOR=$(echo "$DATA" | tail -1)
 
 if [[ "$IMAGE" != "null" ]]; then
   IMAGE_TEXT="<img src=\"${IMAGE}\" />"
+else
+  IMAGE_TEXT="<img src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\" />"
 fi
 
 htmx_page << EOF
