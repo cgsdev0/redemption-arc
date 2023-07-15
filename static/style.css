@@ -1,0 +1,97 @@
+body,
+button,
+input {
+  font-size: 16pt;
+  color: white;
+  font-family: "Comic Sans MS", "Comic Sans", "Verdana";
+}
+body {
+  font-size: 16pt;
+  color: white;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to right top,
+    #275399,
+    #007fc3,
+    #00abdd,
+    #00d6e4,
+    #00ffdd
+  );
+}
+#signature {
+  position: absolute;
+  z-index: 100;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#signature a {
+  text-decoration: none;
+}
+#signature a:hover {
+  text-decoration: underline;
+}
+
+#signature svg {
+  width: 36px;
+  height: 36px;
+  margin-top: -4px;
+  vertical-align: middle;
+}
+.footer-link {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.footer-link input {
+  border: 2px solid black;
+  border-radius: 12px;
+  color: black;
+  padding: 6px;
+}
+
+.footer-link button {
+  color: black;
+  border-radius: 12px;
+  min-width: 90px;
+  padding: 6px;
+}
+.footer-link button:active {
+  color: black;
+  background-color: gray;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container p {
+  max-width: 800px;
+  text-align: center;
+}
+
+.container button {
+  color: black;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 200px;
+}
+
+.container input {
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 20px;
+  color: black;
+}

@@ -34,11 +34,14 @@ urldecode() {
 }
 
 function htmx_page() {
+  if [[ -z "$NO_STYLES" ]]; then
+    STYLE_TEXT='<link rel="stylesheet" href="/static/style.css">'
+  fi
 [[ ${HTTP_HEADERS["HX-Request"]} == "true" ]] || [[ "$INTERNAL_REQUEST" == "true" ]] || cat << EOF
   <!doctype html>
   <html>
   <head>
-  <link rel="stylesheet" href="/static/style.css">
+  ${STYLE_TEXT}
   <script src="https://unpkg.com/moment@2.29.4/min/moment.min.js"></script>
   <script>
     const w = (n) => {
@@ -208,10 +211,12 @@ writeHttpResponse() {
 
     if [[ ! -f "$FILE_PATH" ]]; then
       printf "%s\r\n" "HTTP/1.1 404 Not Found"
+      printf "%s\r\n" "Server: bash lol"
       printf "%s\r\n" ""
       return
     fi
     printf "%s\r\n" "HTTP/1.1 200 OK"
+    printf "%s\r\n" "Server: bash lol"
     if [[ "$REQUEST_PATH" == *".css" ]]; then
       printf "%s\r\n" "Content-Type: text/css"
     else
@@ -225,6 +230,7 @@ writeHttpResponse() {
   if [[ -z "$route_script" ]]; then
     debug "404 no match found"
     printf "%s\r\n" "HTTP/1.1 404 Not Found"
+    printf "%s\r\n" "Server: bash lol"
     printf "%s\r\n" ""
     return
   fi
@@ -232,6 +238,7 @@ writeHttpResponse() {
   if directive_test=$(head -1 "pages/${route_script}"); then
     if [[ "$directive_test" == "# sse" ]]; then
       printf "%s\r\n" "HTTP/1.1 200 OK"
+      printf "%s\r\n" "Server: bash lol"
       printf "%s\r\n" "Content-Type: text/event-stream"
       printf "%s\r\n" ""
       source "pages/${route_script}"

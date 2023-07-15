@@ -8,6 +8,7 @@ for COOLDOWN in $COOLDOWNS; do
 done
 
 HIDE_LOGO=true
+NO_STYLES=true
 htmx_page << EOF
 <div class="obs" hx-sse="connect:/sse/${USER_ID} swap:cooldown" hx-swap="afterend">
   ${CHILDREN}
