@@ -95,3 +95,9 @@ body {
   padding: 20px;
   color: black;
 }
+
+.example {
+  width: 50%;
+  height: 40vh;
+  resize: none;
+}

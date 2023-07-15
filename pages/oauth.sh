@@ -106,5 +106,51 @@ htmx_page << EOF
   });
 })();
 </script>
+<h3>Example CSS</h3>
+<textarea class="example" spellcheck="false">
+/* Put this in the browser source Custom CSS */
+
+body {
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0px auto;
+  overflow: hidden;
+  display: inline-block;
+}
+
+* {
+  font-size: 50px !important;
+  font-family: Verdana !important;
+}
+
+.obs {
+  font-size: 50px !important;
+  display: flex;
+  font-family: Verdana !important;
+  flex-direction: column;
+}
+
+.cooldown {
+  opacity: 80% !important;
+  margin-bottom: 12px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  background-color: black;
+  padding: 10px;
+  color: white;
+  padding: 12px;
+  border-radius: 20px;
+}
+
+.cooldown img {
+  height: 50px;
+  width: 50px;
+  margin-right: 0.5em;
+}
+
+.cooldown .time {
+  margin-left: 0.5em;
+}
+</textarea>
 </div>
 EOF
