@@ -4,7 +4,7 @@ _Credit to aryajp for the name_
 
 Redemption ARC (**A**utomatically **R**eading **C**ooldowns) is a browser-source based UI for Twitch streamers to visualize the cooldowns of channel point redemptions on their stream.
 
-Written for https://codejam.timeenjoyed.dev/ 2023
+Written for https://codejam.timeenjoyed.dev/ 2023 in [a single Twitch stream](https://www.twitch.tv/videos/1872559097)
 
 ## Demo
 
