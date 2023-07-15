@@ -1,6 +1,6 @@
 FROM ubuntu
 
-RUN apt-get update && apt-get install ucspi-tcp curl jq
+RUN apt-get update && apt-get install -y ucspi-tcp curl jq
 
 EXPOSE 3000
 
