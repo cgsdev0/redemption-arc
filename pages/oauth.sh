@@ -61,7 +61,7 @@ TWITCH_RESPONSE=$(curl -Ss -X POST 'https://api.twitch.tv/helix/eventsub/subscri
 -H "Authorization: Bearer ${ACCESS_TOKEN}" \
 -H "Client-Id: ${TWITCH_CLIENT_ID}" \
 -H 'Content-Type: application/json' \
--d '{"type":"channel.channel_points_custom_reward.update","version":"1","condition":{"broadcaster_user_id":"'${USER_ID}'"},"transport":{"method":"webhook","callback":"https://60d6-136-25-169-28.ngrok-free.app/webhook","secret":"'${TWITCH_EVENTSUB_SECRET}'"}}')
+-d '{"type":"channel.channel_points_custom_reward.update","version":"1","condition":{"broadcaster_user_id":"'${USER_ID}'"},"transport":{"method":"webhook","callback":"https://arc.bashsta.cc/webhook","secret":"'${TWITCH_EVENTSUB_SECRET}'"}}')
 
 HAS_DATA=$(echo "$TWITCH_RESPONSE" | jq -r '.data')
 STATUS=$(echo "$TWITCH_RESPONSE" | jq -r '.status')
