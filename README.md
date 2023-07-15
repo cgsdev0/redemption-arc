@@ -6,6 +6,12 @@ Redemption ARC (**A**utomatically **R**eading **C**ooldowns) is a browser-source
 
 Written for https://codejam.timeenjoyed.dev/ 2023
 
+## Demo
+
+https://github.com/cgsdev0/redemption-arc/assets/4583705/3a21d222-0e2b-4d3e-9c04-40632459b121
+
+(special thanks to https://twitch.tv/TheCoppinger)
+
 ## Instructions
 
 1. Go to [the ARC website](https://arc.bashsta.cc)
@@ -18,3 +24,7 @@ you now have cooldowns for your channel point rewards! 🥳
 
 Powered by [BASH stack](https://github.com/cgsdev0/bash-stack)
 <p align="center"><img src="https://user-images.githubusercontent.com/4583705/223574260-c94bafb3-82af-4adf-8d71-d8ef7724d287.png" alt="BASH Stack Logo" /></p>
+
+
+
+
