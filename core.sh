@@ -186,7 +186,7 @@ EOF
   # Read body
   CLEN=${HTTP_HEADERS["Content-Length"]}
   [[ "$CLEN" =~ ^[0-9]+$ ]] && \
-    test $CLEN -gt 0 && read -N $CLEN REQUEST_BODY;
+    test $CLEN -gt 0 && read -rN $CLEN REQUEST_BODY;
   # Parse Form Data
   if [[ ! -z "$REQUEST_BODY" ]] && \
     [[ ${HTTP_HEADERS["Content-Type"]} == "application/x-www-form-urlencoded" ]]; then
