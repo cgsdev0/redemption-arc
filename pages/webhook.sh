@@ -33,7 +33,7 @@ if [[ "$TYPE" == "notification" ]]; then
   USER_ID=$(echo "$REQUEST_BODY" | jq -r '.event.broadcaster_user_id')
   COOLDOWN_EXPIRES_AT=$(echo "$REQUEST_BODY" | jq -r '.event.cooldown_expires_at')
   IMG=$(echo "$REQUEST_BODY" | jq -r '.event.image.url_4x')
-  TITLE=$(echo "$REQUEST_BODY" | jq -r '.event.title')
+  TITLE=$(echo "$REQUEST_BODY" | jq -r '.event.title' | sed "s/'/&apos;/g")
   STOCK=$(echo "$REQUEST_BODY" | jq -r '.event.is_in_stock')
   REDEEM_ID=$(echo "$REQUEST_BODY" | jq -r '.event.id')
   COLOR=$(echo "$REQUEST_BODY" | jq -r '.event.background_color')
