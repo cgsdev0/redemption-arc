@@ -24,7 +24,14 @@ you now have cooldowns for your channel point rewards! 🥳
 
 ## Running Locally
 
-The easiest (and safest) way to get the project running is to use Docker. For example:
+You will first need to create a folder in the root folder of the project called `.secrets`. The file should look like this:
+```
+TWITCH_CLIENT_ID=< obtained from twitch developer console >
+TWITCH_CLIENT_SECRET=< obtained from twitch developer console >
+TWITCH_EVENTSUB_SECRET=< a random string of 30-100 characters >
+```
+
+Once you have that, the easiest (and safest) way to get the project running is to use Docker. For example:
 ```
 docker build -t redemptionarc .
 docker run -p 3000:3000 redemptionarc
