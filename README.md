@@ -12,7 +12,7 @@ https://github.com/cgsdev0/redemption-arc/assets/4583705/3a21d222-0e2b-4d3e-9c04
 
 (special thanks to https://twitch.tv/TheCoppinger)
 
-## Instructions
+## Usage
 
 1. Go to [the ARC website](https://arc.bashsta.cc)
 2. Connect your Twitch account
@@ -21,6 +21,16 @@ https://github.com/cgsdev0/redemption-arc/assets/4583705/3a21d222-0e2b-4d3e-9c04
 5. (optional) copy paste the provided example CSS into the browser source settings
 
 you now have cooldowns for your channel point rewards! 🥳
+
+## Running Locally
+
+The easiest (and safest) way to get the project running is to use Docker. For example:
+```
+docker build -t redemptionarc .
+docker run -p 3000:3000 redemptionarc
+```
+
+<hr>
 
 Powered by [BASH stack](https://github.com/cgsdev0/bash-stack)
 <p align="center"><img src="https://user-images.githubusercontent.com/4583705/223574260-c94bafb3-82af-4adf-8d71-d8ef7724d287.png" alt="BASH Stack Logo" /></p>
