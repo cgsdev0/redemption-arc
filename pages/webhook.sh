@@ -43,8 +43,7 @@ if [[ "$TYPE" == "notification" ]]; then
     printf "%s\n%s\n%s\n%s\n" "${COOLDOWN_EXPIRES_AT}" "${IMG}" "${TITLE}" "${COLOR}" > "$FILE"
     # publish it to subscribers
     COOLDOWN=$(component "/cooldowns/${USER_ID}/${REDEEM_ID}" | tr '\n' ' ')
-    printf "event: cooldown\ndata: %s\n\n" "$COOLDOWN" \
-    | publish "$USER_ID"
+    event cooldown "$COOLDOWN" | publish "$USER_ID"
   fi
   return $(status_code 204)
 fi
