@@ -128,6 +128,21 @@ function htmx_page() {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta charset="UTF-8">
   ${STYLE_TEXT}
+  <script src="https://unpkg.com/moment@2.29.4/min/moment.min.js"></script>
+  <script>
+    const w = (n) => {
+      const result = n.toString();
+      if (result.length === 1) return "0" + result;
+      return result;
+    }
+    const formatDuration = (duration) => {
+      const seconds = Math.floor(duration % 60);
+      const minutes = Math.floor(duration / 60) % 60;
+      const hours = Math.floor(duration / 3600);
+      return w(hours) + ":" + w(minutes) + ":" + w(seconds);
+    }
+    window.formatDuration = formatDuration;
+  </script>
   <script src="https://unpkg.com/htmx.org@1.9.3/dist/htmx.min.js" integrity="sha384-lVb3Rd/Ca0AxaoZg5sACe8FJKF0tnUgR2Kd7ehUOG5GCcROv5uBIZsOqovBAcWua" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/hyperscript.org@0.9.8"></script>
   <script src="https://unpkg.com/htmx.org/dist/ext/sse.js"></script>
