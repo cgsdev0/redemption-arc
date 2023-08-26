@@ -191,7 +191,7 @@ function publish() {
 }
 
 event() {
-  printf "event: %s\ndata: %s\n\n" "$@"
+  printf "event: %s\ndata: %s\n\n" "$*"
 }
 
 

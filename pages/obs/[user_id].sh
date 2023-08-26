@@ -1,5 +1,5 @@
 
-USER_ID="${REQUEST_PATH##*/}"
+USER_ID="${PATH_VARS[user_id]}"
 
 COOLDOWNS=$(find data -type f -iname "cooldown_${USER_ID}_*")
 for COOLDOWN in $COOLDOWNS; do

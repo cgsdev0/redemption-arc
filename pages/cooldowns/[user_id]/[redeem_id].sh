@@ -1,7 +1,6 @@
 
-USER_ID="${REQUEST_PATH%/*}"
-USER_ID="${USER_ID##*/}"
-REDEEM_ID="${REQUEST_PATH##*/}"
+USER_ID="${PATH_VARS[user_id]}"
+REDEEM_ID="${PATH_VARS[redeem_id]}"
 
 DATA=$(cat "data/cooldown_${USER_ID}_${REDEEM_ID}")
 COOLDOWN_EXPIRES_AT=$(echo "$DATA" | head -1)
