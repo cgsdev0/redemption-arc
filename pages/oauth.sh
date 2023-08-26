@@ -1,7 +1,7 @@
 
 source .secrets
 
-HOST=${HTTP_HEADERS["Host"]}
+HOST=${HTTP_HEADERS["host"]}
 PROTOCOL="https://"
 if [[ "$HOST" =~ "localhost"* ]]; then
   PROTOCOL="http://"
@@ -88,7 +88,7 @@ htmx_page << EOF
   <h1>Redemption ARC</h1>
   <p>Successfully registered. You can now add this URL as a browser source in OBS:</p>
   <form class="footer-link copy">
-  <input type="text" value="${PROTOCOL}${HTTP_HEADERS["Host"]}/obs/${USER_ID}">
+  <input type="text" value="${PROTOCOL}${HTTP_HEADERS["host"]}/obs/${USER_ID}">
   <button type="button">Copy</button>
 </form>
 <script type="text/javascript">

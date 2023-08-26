@@ -2,11 +2,11 @@
 
 source .secrets
 
-SIGNATURE=${HTTP_HEADERS['Twitch-Eventsub-Message-Signature']}
-TOPIC=${HTTP_HEADERS['Twitch-Eventsub-Subscription-Type']}
-MSG_ID=${HTTP_HEADERS['Twitch-Eventsub-Message-Id']}
-TIMESTAMP=${HTTP_HEADERS['Twitch-Eventsub-Message-Timestamp']}
-TYPE=${HTTP_HEADERS['Twitch-Eventsub-Message-Type']}
+SIGNATURE=${HTTP_HEADERS['twitch-eventsub-message-signature']}
+TOPIC=${HTTP_HEADERS['twitch-eventsub-subscription-type']}
+MSG_ID=${HTTP_HEADERS['twitch-eventsub-message-id']}
+TIMESTAMP=${HTTP_HEADERS['twitch-eventsub-message-timestamp']}
+TYPE=${HTTP_HEADERS['twitch-eventsub-message-type']}
 HMAC_MSG="${MSG_ID}${TIMESTAMP}${REQUEST_BODY}"
 
 SIGNATURE2="sha256=$(echo -n "$HMAC_MSG" | openssl sha256 -hmac "$TWITCH_EVENTSUB_SECRET" | cut -d' ' -f2)"

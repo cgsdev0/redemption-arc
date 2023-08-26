@@ -1,7 +1,7 @@
 
 source .secrets
 
-HOST=${HTTP_HEADERS["Host"]}
+HOST=${HTTP_HEADERS["host"]}
 PROTOCOL="https://"
 if [[ "$HOST" =~ "localhost"* ]]; then
   PROTOCOL="http://"
